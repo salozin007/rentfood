@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RentFood</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🍰 RentFood
+        </div>
+
+        <input type="text" id="pesquisa" placeholder="Buscar bolo...">
+
+        <nav class="categorias">
+
+            <button onclick="filtrar('todos')">Todos</button>
+            <button onclick="filtrar('chocolate')">Chocolate</button>
+            <button onclick="filtrar('frutas')">Frutas</button>
+            <button onclick="filtrar('especial')">Especiais</button>
+
+        </nav>
+
+        <div class="carrinho-icon" onclick="abrirCarrinho()">
+            🛒 <span id="contador">0</span>
+        </div>
+
+    </header>
+
+
+    <!-- BANNER COM CARROSSEL -->
+
+    <section class="banner">
+
+        <div class="slides">
+
+            <div class="slide ativo"
+                style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587')"></div>
+
+            <div class="slide"
+                style="background-image:url('https://images.unsplash.com/photo-1559620192-032c4bc4674e')"></div>
+
+            <div class="slide"
+                style="background-image:url('https://images.unsplash.com/photo-1603532648955-039310d9ed75')"></div>
+
+        </div>
+
+        <div class="banner-texto">
+            <h1>Os melhores bolos da cidade</h1>
+            <p>Entrega rápida e sabor garantido</p>
+        </div>
+
+    </section>
+
+
+    <section class="produtos" id="produtos"></section>
+
+    <div class="overlay" id="overlay" onclick="fecharCarrinho()"></div>
+
+    <div class="carrinho" id="carrinho">
+
+        <div class="topo-carrinho">
+
+            <h2>Seu Pedido</h2>
+            <button onclick="fecharCarrinho()">✖</button>
+
+        </div>
+
+        <ul id="lista"></ul>
+
+        <div class="resumo">
+
+            <p id="subtotal">Subtotal: R$ 0</p>
+            <p id="entrega">Entrega: R$ 5</p>
+            <h3 id="total">Total: R$ 0</h3>
+
+            <button onclick="limparCarrinho()">Limpar Carrinho</button>
+            <button onclick="finalizar()">Finalizar Pedido</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
