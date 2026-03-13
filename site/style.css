@@ -1,0 +1,340 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+header {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+
+    background: #ff3b3b;
+    color: white;
+
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#pesquisa {
+
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 220px;
+
+}
+
+.categorias button {
+
+    margin: 3px;
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background: white;
+
+    transition: 0.3s;
+
+}
+
+.categorias button:hover {
+
+    background: #ffe5e5;
+
+}
+
+.carrinho-icon {
+
+    cursor: pointer;
+    font-size: 22px;
+
+}
+
+
+
+
+
+.banner {
+
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.slides {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.slide {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+    transition: opacity 1s;
+
+}
+
+.slide.ativo {
+    opacity: 1;
+}
+
+.banner-texto {
+
+    position: relative;
+    z-index: 2;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    padding: 20px 40px;
+
+    border-radius: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.produtos {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, 250px);
+
+    gap: 30px;
+
+    padding: 40px;
+
+    justify-content: center;
+
+}
+
+.card {
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition: 0.3s;
+
+    animation: aparecer .5s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px) scale(1.03);
+
+}
+
+.card img {
+
+    width: 100%;
+
+    height: 170px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+}
+
+.card button {
+
+    margin-top: 10px;
+
+    background: #ff3b3b;
+
+    border: none;
+
+    color: white;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    width: 100%;
+
+    font-weight: bold;
+
+}
+
+.card button:hover {
+
+    background: #d90000;
+
+}
+
+.overlay {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+}
+
+.overlay.ativo {
+
+    display: block;
+
+}
+
+.carrinho {
+
+    position: fixed;
+
+    right: -400px;
+
+    top: 0;
+
+    width: 350px;
+
+    height: 100%;
+
+    background: white;
+
+    padding: 20px;
+
+    transition: .4s;
+
+    overflow: auto;
+
+    box-shadow: -5px 0 15px rgba(0, 0, 0, .3);
+
+}
+
+.carrinho.ativo {
+
+    right: 0;
+
+}
+
+.topo-carrinho {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+#lista li {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 10px 0;
+
+}
+
+.qtd {
+
+    display: flex;
+
+    gap: 5px;
+
+}
+
+.qtd button {
+
+    border: none;
+
+    padding: 5px 8px;
+
+    cursor: pointer;
+
+    background: #ff3b3b;
+
+    color: white;
+
+    border-radius: 4px;
+
+}
+
+.resumo button {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 10px;
+
+    border: none;
+
+    background: #ff3b3b;
+
+    color: white;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
