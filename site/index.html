@@ -37,9 +37,6 @@
 
     </header>
 
-
-    <!-- BANNER COM CARROSSEL -->
-
     <section class="banner">
 
         <div class="slides">
@@ -62,7 +59,6 @@
 
     </section>
 
-
     <section class="produtos" id="produtos"></section>
 
     <div class="overlay" id="overlay" onclick="fecharCarrinho()"></div>
@@ -70,10 +66,8 @@
     <div class="carrinho" id="carrinho">
 
         <div class="topo-carrinho">
-
             <h2>Seu Pedido</h2>
             <button onclick="fecharCarrinho()">✖</button>
-
         </div>
 
         <ul id="lista"></ul>
@@ -86,6 +80,48 @@
 
             <button onclick="limparCarrinho()">Limpar Carrinho</button>
             <button onclick="finalizar()">Finalizar Pedido</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TELA DE DETALHE DO BOLO -->
+
+    <div class="detalhe" id="detalhe">
+
+        <div class="detalhe-box">
+
+
+            <div class="avaliacao">
+
+                <p>Avalie este bolo</p>
+
+                <div class="estrelas">
+
+                    <span class="estrela" onclick="avaliar(1)">★</span>
+                    <span class="estrela" onclick="avaliar(2)">★</span>
+                    <span class="estrela" onclick="avaliar(3)">★</span>
+                    <span class="estrela" onclick="avaliar(4)">★</span>
+                    <span class="estrela" onclick="avaliar(5)">★</span>
+
+                </div>
+
+                <textarea id="opiniao" placeholder="Escreva sua opinião"></textarea>
+
+                <button onclick="enviarOpiniao()">Enviar avaliação</button>
+
+            </div>
+
+            <button class="fechar" onclick="fecharDetalhe()">✖</button>
+
+            <img id="detalhe-img">
+
+            <h2 id="detalhe-nome"></h2>
+
+            <p id="detalhe-preco"></p>
+
+            <button id="detalhe-btn">Adicionar ao carrinho</button>
 
         </div>
 
