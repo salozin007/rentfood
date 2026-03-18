@@ -16,18 +16,14 @@
 
     <header>
 
-        <div class="logo">
-            🍰 RentFood
-        </div>
+        <div class="logo">🍰 RentFood</div>
 
-        <input type="text" id="pesquisa" placeholder="Buscar bolo...">
+        <nav class="menu">
 
-        <nav class="categorias">
-
-            <button onclick="filtrar('todos')">Todos</button>
-            <button onclick="filtrar('chocolate')">Chocolate</button>
-            <button onclick="filtrar('frutas')">Frutas</button>
-            <button onclick="filtrar('especial')">Especiais</button>
+            <button onclick="mostrar('todos')">Todos</button>
+            <button onclick="mostrar('chocolate')">Chocolate</button>
+            <button onclick="mostrar('frutas')">Frutas</button>
+            <a href="#contato">Contato</a>
 
         </nav>
 
@@ -37,93 +33,58 @@
 
     </header>
 
-    <section class="banner">
+    <section class="produtos">
 
-        <div class="slides">
-
-            <div class="slide ativo"
-                style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587')"></div>
-
-            <div class="slide"
-                style="background-image:url('https://images.unsplash.com/photo-1559620192-032c4bc4674e')"></div>
-
-            <div class="slide"
-                style="background-image:url('https://images.unsplash.com/photo-1603532648955-039310d9ed75')"></div>
-
+        <div class="card chocolate">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+            <h3>Bolo Chocolate</h3>
+            <p>R$ 25</p>
+            <button onclick="adicionar('Bolo Chocolate', 25)">Adicionar</button>
         </div>
 
-        <div class="banner-texto">
-            <h1>Os melhores bolos da cidade</h1>
-            <p>Entrega rápida e sabor garantido</p>
+        <div class="card chocolate">
+            <img src="bolobri.jpg">
+            <h3>Bolo Brigadeiro</h3>
+            <p>R$ 30</p>
+            <button onclick="adicionar('Bolo Brigadeiro', 30)">Adicionar</button>
+        </div>
+
+        <div class="card frutas">
+            <img src="bolomo.png">
+            <h3>Bolo Morango</h3>
+            <p>R$ 28</p>
+            <button onclick="adicionar('Bolo Morango', 28)">Adicionar</button>
+        </div>
+
+        <div class="card frutas">
+            <img src="bololim.webp">
+            <h3>Bolo Limão</h3>
+            <p>R$ 22</p>
+            <button onclick="adicionar('Bolo Limão', 22)">Adicionar</button>
         </div>
 
     </section>
 
-    <section class="produtos" id="produtos"></section>
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <p>Email: contato@rentfood.com</p>
+        <p>Telefone: (14) 99999-9999</p>
+    </section>
 
     <div class="overlay" id="overlay" onclick="fecharCarrinho()"></div>
 
     <div class="carrinho" id="carrinho">
 
-        <div class="topo-carrinho">
-            <h2>Seu Pedido</h2>
-            <button onclick="fecharCarrinho()">✖</button>
-        </div>
+        <h2>Seu Pedido</h2>
 
         <ul id="lista"></ul>
 
-        <div class="resumo">
+        <p id="total">Total: R$ 0</p>
 
-            <p id="subtotal">Subtotal: R$ 0</p>
-            <p id="entrega">Entrega: R$ 5</p>
-            <h3 id="total">Total: R$ 0</h3>
+        <button onclick="concluirCompra()">Concluir Compra</button>
+        <button onclick="limparCarrinho()">Limpar Carrinho</button>
 
-            <button onclick="limparCarrinho()">Limpar Carrinho</button>
-            <button onclick="finalizar()">Finalizar Pedido</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- TELA DE DETALHE DO BOLO -->
-
-    <div class="detalhe" id="detalhe">
-
-        <div class="detalhe-box">
-
-
-            <div class="avaliacao">
-
-                <p>Avalie este bolo</p>
-
-                <div class="estrelas">
-
-                    <span class="estrela" onclick="avaliar(1)">★</span>
-                    <span class="estrela" onclick="avaliar(2)">★</span>
-                    <span class="estrela" onclick="avaliar(3)">★</span>
-                    <span class="estrela" onclick="avaliar(4)">★</span>
-                    <span class="estrela" onclick="avaliar(5)">★</span>
-
-                </div>
-
-                <textarea id="opiniao" placeholder="Escreva sua opinião"></textarea>
-
-                <button onclick="enviarOpiniao()">Enviar avaliação</button>
-
-            </div>
-
-            <button class="fechar" onclick="fecharDetalhe()">✖</button>
-
-            <img id="detalhe-img">
-
-            <h2 id="detalhe-nome"></h2>
-
-            <p id="detalhe-preco"></p>
-
-            <button id="detalhe-btn">Adicionar ao carrinho</button>
-
-        </div>
+        <button onclick="fecharCarrinho()">Fechar</button>
 
     </div>
 
