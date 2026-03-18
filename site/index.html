@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>RentFood</title>
-
-    <link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RentFood 🍰 - Melhores Bolos da Cidade</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+<header>
+<div class="logo">🍰 RentFood</div>
+<input type="text" id="pesquisa" placeholder="🔍 Buscar bolo...">
+<div class="categorias">
+<button class="ativo" onclick="filtrar('todos')">Todos</button>
+<button onclick="filtrar('chocolate')">🍫 Chocolate</button>
+<button onclick="filtrar('frutas')">🍓 Frutas</button>
+<button onclick="filtrar('especial')">⭐ Especial</button>
+</div>
+<div class="carrinho-icon" onclick="abrirCarrinho()">
+🛒 <span id="contador">0</span>
+</div>
+</header>
 
-    <header>
+<!-- BANNER -->
+<section class="banner">
+<div class="slides">
+<div class="slide ativo" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1606312619070-d48b4c652a52')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1559620192-032c4bc4674e')"></div>
+</div>
+<button class="prev" onclick="slideAnterior()">❮</button>
+<button class="next" onclick="proximoSlide()">❯</button>
+<div class="banner-texto">
+<h1>Os Melhores Bolos 🎂</h1>
+<p>Entrega rápida na sua casa!</p>
+<button class="btn-pedido" onclick="filtrar('todos')">Ver Bolos</button>
+</div>
+</section>
 
+<<<<<<< HEAD
         <div class="logo">🍰 RentFood</div>
 
         <nav class="menu">
@@ -89,7 +113,50 @@
     </div>
 
     <script src="script.js"></script>
+=======
+<!-- PRODUTOS -->
+<section id="produtos" class="produtos"></section>
 
+<!-- CARRINHO -->
+<div id="overlay" class="overlay" onclick="fecharCarrinho()"></div>
+<div id="carrinho" class="carrinho">
+<div class="topo-carrinho">
+<h2>🛒 Seu Carrinho</h2>
+<button class="fechar-btn" onclick="fecharCarrinho()">✕</button>
+</div>
+<ul id="lista"></ul>
+<div class="resumo">
+<p id="subtotal"></p>
+<p id="total"></p>
+<button class="btn-finalizar" onclick="finalizar()">Finalizar Pedido</button>
+<button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
+</div>
+</div>
+
+<!-- DETALHE -->
+<div id="detalhe" class="detalhe">
+<div class="detalhe-box">
+<button class="fechar" onclick="fecharDetalhe()">✕</button>
+<img id="detalhe-img">
+<div class="detalhe-info">
+<h2 id="detalhe-nome"></h2>
+<div class="preco-avaliacao">
+<p id="detalhe-preco"></p>
+<div class="estrelas" id="estrelas-detalhe">
+<span class="estrela" onclick="avaliar(1)">★</span>
+<span class="estrela" onclick="avaliar(2)">★</span>
+<span class="estrela" onclick="avaliar(3)">★</span>
+<span class="estrela" onclick="avaliar(4)">★</span>
+<span class="estrela" onclick="avaliar(5)">★</span>
+</div>
+</div>
+</div>
+<textarea id="opiniao" placeholder="Deixe sua opinião sobre este bolo..."></textarea>
+<button class="btn-enviar" onclick="enviarOpiniao()">Enviar Avaliação ⭐</button>
+</div>
+</div>
+>>>>>>> 10134f1401cd9f20df9e2facad06c8adf91e447b
+
+<script src="script.js"></script>
 </body>
-
 </html>
